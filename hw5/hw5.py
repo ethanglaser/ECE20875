@@ -63,5 +63,5 @@ low = xbar + (t_c * sd / (n ** 0.5))
 print(high, low)
 
 t = (xbar - 0) / (sd / n**0.5)
-p = 2 * stats.t.cdf(-abs(t), n-1)
+p = 1 - 2 * stats.t.cdf(-abs(t), n-1)
 print(p)
