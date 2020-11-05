@@ -21,6 +21,7 @@ def main(datapath, degrees):
 #Output: X, a list of features for each sample, where X[i][j] corresponds to the jth coefficient
 #for the ith sample. Viewed as a matrix, X should have dimension #samples by d+1.
 def feature_matrix(x, d):
+    print(x.shape)
     X = [[xx ** dd for dd in range(d, -1, -1)] for xx in x]
     return X
 

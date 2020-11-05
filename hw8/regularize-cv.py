@@ -22,10 +22,10 @@ def main():
     #Normalizing training and testing data
     [X_train, trn_mean, trn_std] = normalize_train(X_train)
     X_test = normalize_test(X_test, trn_mean, trn_std)
-
+    print(X_test[3][3])
     #Define the range of lambda to test
     lmbda = np.logspace(-1,2,num=101)
-
+    #lmbda = [1,100]
     MODEL = []
     MSE = []
     for l in lmbda:
@@ -65,6 +65,7 @@ def normalize_train(X_train):
         X_norm[:, i] = (X_train[:, i] - np.mean(X_train[:, i])) / np.std(X_train[:, i])
         mean[i] = np.mean(X_train[:, i])
         std[i] = np.std(X_train[:, i])
+    print(mean, std)
     return X_norm, mean, std
 
 
