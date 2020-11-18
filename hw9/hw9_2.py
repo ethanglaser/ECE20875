@@ -52,6 +52,7 @@ def buildDocWordMatrix(doclist) :
         wordlists.append(rcd)
         wordlist += rcd
     wordlist = sorted(list(set(wordlist)))
+    print(wordlist)
     #2. Use these word lists to build the doc word matrix
     docword = np.zeros((len(doclist), len(wordlist)))
     for index, wl in enumerate(wordlists):
@@ -65,6 +66,7 @@ def buildDocWordMatrix(doclist) :
 #with the same shape as docword
 def buildTFMatrix(docword) :
     sums = docword.sum(axis=1)
+    print(sums)
     tf = docword / sums[:, np.newaxis]
     
     return tf

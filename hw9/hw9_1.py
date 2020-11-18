@@ -1,3 +1,4 @@
+import re
 #Arguments:
 #  filename: name of file to read in
 #Returns: a list of strings
@@ -15,7 +16,8 @@ def getFormattedText(filename) :
     with open(filename, 'r') as f:
         lines = f.readlines()
     for index, line in enumerate(lines):
-        lines[index] = '__' + line.lower().replace('\n', '') + '__'
+        line = re.sub(r"^\d+\s|\s\d+\s|\s\d+$", "", line)
+        lines[index] = '__' + line.lower().replace('\n', '').strip() + '__'
             
     return lines
         
@@ -151,4 +153,3 @@ if __name__ == '__main__':
     
     testFile = join(path,'mystery.txt')
     print(compareLang(testFile, pathList, 20))#determine language of mystery file
-    
