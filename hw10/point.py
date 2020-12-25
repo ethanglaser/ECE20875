@@ -23,6 +23,7 @@ class Point :
         for vals in zip(self.coords, other.coords):
             summ += (vals[1] - vals[0]) ** 2
         dist = summ ** 0.5
+        print(dist)
         
         return dist
         
@@ -43,9 +44,11 @@ class Point :
     #Return the object that is closest to the current point
     #Useful for finding the closest cluster to the current point
     def closest(self, listOfPoints) :
+        print(listOfPoints)
         minDist = self.distFrom(listOfPoints[0])
         minPt = listOfPoints[0]
         for p in listOfPoints :
+            print(p, self)
             if (self.distFrom(p) < minDist) :
                 minDist = self.distFrom(p)
                 minPt = p

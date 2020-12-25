@@ -23,6 +23,9 @@ def kmeans(pointdata, clusterdata) :
         #B. Update the centers for each cluster (use Cluster.updateCenter)
         for cluster in clusters:
             cluster.updateCenter()
+        print(points)
+        print(clusters)
+        status = False
     #4. Return the list of clusters, with the centers in their final positions
     return clusters
     
@@ -34,4 +37,5 @@ if __name__ == '__main__' :
     
     clusters = kmeans(data, centers)
     for c in clusters :
-        c.printAllPoints()
+        a = 1
+        #c.printAllPoints()
